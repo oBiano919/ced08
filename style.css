@@ -1,0 +1,202 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    background: #222;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    animation: slideDown 0.8s ease;
+}
+
+.nos h1 {
+    font-size: 24px;
+    color: #f90;
+    font-weight: bold;
+    transition: color 0.4s ease;
+    cursor: pointer;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.4s ease;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #f90;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+.menu a:hover {
+    color: #f90;
+}
+
+.menu a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Animação Navbar */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Principal */
+.principal {
+    text-align: center;
+    padding: 120px 15px 40px;
+    background-color: #333;
+    animation: fadeIn 1s ease;
+}
+
+.principal h2 {
+    font-size: 36px;
+    color: #f90;
+    margin-bottom: 15px;
+    animation: popIn 1.2s ease;
+}
+
+/* Section */
+section {
+    padding: 40px 15%;
+    animation: fadeIn 1s ease;
+}
+
+section h2 {
+    font-size: 28px;
+    color: #f90;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section h2::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 60%;
+    height: 2px;
+    background-color: #f90;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: underline 0.8s ease forwards;
+}
+
+section p {
+    color: #fff; /* Letra branca */
+}
+
+/* Imagem Centralizada */
+section img {
+    display: block;
+    margin: 20px auto;
+    max-width: 80%;
+    height: auto;
+    border: 2px solid #f90;
+    border-radius: 8px;
+    animation: fadeInImage 1s ease;
+}
+
+/* Rodapé */
+footer {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    animation: slideUp 0.8s ease;
+}
+
+.rodape p {
+    color: #bbb;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes underline {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

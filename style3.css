@@ -1,0 +1,125 @@
+/* Importa fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+/* Estilos Gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #000000; /* Fundo preto */
+    color: #FFFFFF; /* Texto branco */
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1a1a1a; /* Cinza escuro */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .Logo h1 {
+    font-size: 24px;
+    color: #FFD700; /* Amarelo para destaque */
+    font-weight: bold;
+    animation: fadeInLogo 1s ease-in-out;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+    color: #FFD700;
+    transform: scale(1.1); /* Aumenta levemente no hover */
+}
+
+/* Animação da Logo */
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Seção Principal */
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    border-left: 4px solid #FFD700;
+    border-right: 4px solid #FFD700;
+    animation: fadeInSection 1.5s ease;
+}
+
+section img {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+section img:hover {
+    transform: scale(1.05);
+}
+
+section p {
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: justify;
+    padding: 0 10px;
+    animation: fadeInText 2s ease-in;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1a1a1a;
+    padding: 15px 0;
+    text-align: center;
+    color: #FFD700;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+/* Animações */
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
