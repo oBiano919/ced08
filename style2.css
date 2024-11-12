@@ -1,45 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Itim&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Estilos Gerais */
 body {
+     font-family: "Itim", cursive;
     margin: 0;
     background-color: #000;
     color: #fff;
     font-family: Arial, sans-serif;
 }
 
-.navbar {
+/* Navbar */
+header.principal {
     background: #222;
-    padding: 15px 15px;
+    padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Define a direção da coluna */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
     position: fixed;
     width: 100%;
     top: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     z-index: 10;
     animation: slideDown 0.8s ease;
-
 }
 
-.navbar h1 {
-    color: #fff;
+header h1 {
     font-size: 24px;
+    color: #f90;
+    font-weight: bold;
+    transition: color 0.4s ease;
+    margin-bottom: 10px; /* Espaço entre o título e o menu */
+    cursor: pointer;
+    text-align: center;
 }
 
-.navbar a {
+
+#nav-menu{
+   
+    font-family: "Anton SC", sans-serif;
+}
+
+#nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Espaçamento entre os itens de navegação */
+}
+
+#nav-menu ul li {
+    margin: 0;
+}
+
+#nav-menu a {
     color: #fff;
     text-decoration: none;
-    margin: 0 30px;
-    position: relative;
     font-size: 18px;
-    padding: 5px 0;
+    position: relative;
     transition: color 0.4s ease;
 }
 
-.navbar a::after {
+#nav-menu a::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 50%;
     width: 0;
     height: 2px;
@@ -47,13 +68,34 @@ body {
     transition: width 0.4s ease, left 0.4s ease;
 }
 
-.navbar a:hover {
+#nav-menu a:hover {
     color: #f90;
 }
 
-.navbar a:hover::after {
+#nav-menu a:hover::after {
     width: 100%;
     left: 0;
+}
+
+
+/* Animação Navbar */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Principal */
+.principal {
+    text-align: center;
+    padding: 120px 15px 40px;
+    background-color: #333;
+    animation: fadeIn 1s ease;
 }
 
 /* Estilo da seção de conteúdo */
@@ -85,4 +127,199 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
     font-size: 14px;
+}
+/* Logo no canto superior esquerdo */
+header.principal {
+    background: #222;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+header .logo {
+    width: 50px; /* Diminui o tamanho da logo */
+    height: auto;
+    margin-right: 15px;
+}
+
+header h1 {
+    font-size: 20px;
+    color: #f90;
+    font-weight: bold;
+    transition: color 0.4s ease;
+    margin: 0;
+    display: inline-block;
+}
+
+#nav-menu {
+    flex: 1;
+    text-align: right;
+}
+
+#nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+#nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.4s ease;
+}
+
+#nav-menu a:hover {
+    color: #f90;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    header .logo {
+        width: 40px;
+    }
+}
+/* Estilos principais da seção */
+.theater-section {
+    padding: 40px 15%;
+    background-color: #000; /* Fundo preto */
+    color: #fff;
+    text-align: center;
+}
+
+/* Imagem principal */
+.main-image {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto 40px;
+    display: block;
+    border: 2px solid #f90;
+    border-radius: 8px;
+}
+
+/* Títulos */
+.theater-section h2, .theater-section h3 {
+    color: #f90;
+    margin-bottom: 15px;
+}
+
+.theater-section h2 {
+    font-size: 28px;
+}
+
+.theater-section h3 {
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+/* Bloco de depoimento */
+blockquote {
+    margin: 20px;
+    padding: 10
+}
+.desenvolver{
+    text-align: left;
+    float: center;
+    
+}
+.desenvolver {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.desenvolver a {
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #0078D7;
+    transition: transform 0.3s ease, color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.desenvolver::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+    z-index: 0;
+}
+
+.desenvolver a:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+.desenvolver:hover::before {
+    left: -10%;
+}
+footer {
+    position: relative;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.desenvolver {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.desenvolver a {
+    color: #fff;
+    background-color: #0078D7;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.desenvolver a:hover {
+    background-color: #005BB5;
+}
+
+.seta {
+    background-color: #1c1c1c; /* Fundo preto para transmitir força e elegância */
+    color: #FFD700; /* Dourado, símbolo de prosperidade */
+    font-size: 20px; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Negrito para dar destaque ao botão */
+    border: none;
+    border-radius: 50px; /* Deixa o botão mais arredondado */
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+    transition: all 0.3s ease;
+}
+
+.seta:hover {
+    background-color: #FFD700; /* Inverte as cores no hover */
+    color: #1c1c1c; /* Texto preto */
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+}
+
+.seta:active {
+    transform: scale(0.95); /* Dá uma sensação de clique */
 }

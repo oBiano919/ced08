@@ -4,55 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>conciência negra</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" type="text/css" href="style2.css" media="screen" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="Logo">
-                <h1 style="color: white;">Ato Contra o Rascimo que o CED 08 ja fez</h1>
-         </div>
-         <div>
-            <a href="index.html">Sobre o CED 08</a>
-         </div>
-         <div>
-            <A href="conciêncianegra.html">Consciência Negra</A>
-         </div>
-         <div>
-            <A href="https://www.instagram.com/ced08gama/">Instagram</A>
-         </div>
-    </nav>
-    <section>
-            <img src="foto1.png" alt="mãos">
+ 
+    <header class="principal">
         
-            <h2>Teatro "Corpo Fechado": Uma Reflexão Sobre o Racismo</h2>
-            <p>
-                No dia 1º de agosto, alunos do Centro Educacional 08 do Gama apresentaram o espetáculo teatral "Corpo Fechado", que abordou a temática do racismo de forma sensível e impactante. A peça, que incorporou diversas referências a obras do Programa de Avaliação Seriada (PAS) da Universidade de Brasília (UnB), emocionou o público, incluindo a secretária de Educação do Distrito Federal, Hélvia Paranaguá.
-            </p>
-            <p>
-                A apresentação contou com a participação de alunos de diferentes turmas, que se uniram para trazer à cena histórias de resistência e luta contra a discriminação. O espetáculo não apenas entreteve, mas também provocou reflexões importantes sobre a igualdade racial e o respeito à diversidade.
-            </p>
+        <h1>Teatro "Corpo Fechado"</h1>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="páginainicial.html">Início</a></li>
+                <li><a href="index.html">Sobre Nós</a></li>
+                <li><a href="corpofechado.html">Teatro "Corpo Fechado"</a></li>
+                <li><a href="conciêncianegra.html">Consciência Negra</a></li>
+                <li><a href="https://www.instagram.com/ced08gama/">Instagram</a></li>
+                <li><a href="https://linktr.ee/ced08gama?fbclid=PAZXh0bgNhZW0CMTEAAaY-ps3hxEQBxYxWM96Z-MFCefbhvxPBCILXVytCb_EE5ttX6PuAIMvVspg_aem_TlQLX6Tx_wIWXVK3rwaXHA">Informações Importantes</a></li>
+            </ul>
+        </nav>
+    </header>
     
-            <h3>Reações do Público</h3>
-            <p>
-                O público presente ficou tocado pela apresentação, que trouxe à tona questões sociais relevantes. Muitos espectadores expressaram seu apoio e entusiasmo, ressaltando a importância de eventos como esse para a conscientização sobre a temática racial.
-            </p>
+
+    <section class="theater-section">
+        <img   style="margin-top: 100px;" class="main-image" src=".foto1.png" alt="atores teatro">
+        
+        <h2>Teatro "Corpo Fechado": Uma Reflexão Sobre o Racismo</h2>
+        <p>No dia 1º de agosto, alunos do Centro Educacional 08 do Gama apresentaram o espetáculo teatral "Corpo Fechado", que abordou a temática do racismo de forma sensível e impactante...</p>
+        
+        <p>A apresentação contou com a participação de alunos de diferentes turmas...</p>
     
-            <h3>Depoimentos</h3>
-            <blockquote>
-                <p>"Participar da peça foi uma experiência transformadora. Pude sentir a força da nossa mensagem e a importância de falar sobre o racismo." - <strong>Luan Belchior, Aluno do 2º ano</strong></p>
-            </blockquote>
+        <h3>Reações do Público</h3>
+        <p>O público presente ficou tocado pela apresentação...</p>
     
-            <h3>Próximas Ações</h3>
-            <p>
-                O CED 08 continuará promovendo eventos e atividades que abordem a questão racial e a inclusão. Fique atento às nossas redes sociais para informações sobre as próximas apresentações e iniciativas educativas!
-            </p>
-    </section>
+        <h3>Depoimentos</h3>
+        <blockquote>
+            <p>"Ver a peça foi uma experiência transformadora..." - <strong>Luan Belchior, Aluno do 2º ano</strong></p>
+        </blockquote>
+        <blockquote>
+            <p>"gostei muito da peça,com certeza vou ver outras vezes..." - <strong>Felipe Paulo, Aluno do 2º ano</strong></p>
+        </blockquote>
+    
+        <h3>Próximas Ações</h3>
+        <p>O CED 08 continuará promovendo eventos e atividades...</p>
+    
+        <video style="border:solid 1px #fff;" class="video" width="300px" controls autoplay loop>
+            
+            <source src="video.mp4.mp4" type="video/mp4">
+        </video>
+
+        <div class="media-container">
+            <img style="border: 1px solid black;" class="logo" src=".corpo.fechado2.png" alt="logo teatro corpo fechado">
+        </div>
+        
+    </section>    
     <footer>
         <p>CED08 Gama - Educação para a Inclusão e Consciência</p>
-        <p>Endereço:St. Sul Q 4 - Gama, Brasília - DF, 72415-209| Telefone: (61) 93901-8321</p>
-        <p>Nos siga nas redes sociais para mais informações sobre nossos eventos e projetos!</p>
         <p>&copy; 2024 CED08 Gama. Todos os direitos reservados.</p>
+        <div class="desenvolver"><a href="desenvolvedores.html">Desenvolvedores</a></div>
     </footer>
-    
-</body>
+
+    <script src="JS/script2.js"></script>
+    <button class="seta" onclick="topFunction()" id="topButton" title="Voltar ao topo">⬆️</button>
+
+<script>
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+        const topButton = document.getElementById("topButton");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topButton.style.display = "block";
+        } else {
+            topButton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<style>
+    #topButton {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 18px;
+        padding: 10px;
+    }
+</style>
+
+</body >
 </html>

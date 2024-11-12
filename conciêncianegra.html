@@ -4,59 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consciência Negra - CED 08</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" type="text/css" href="style3.css" media="screen" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="Logo">
-            <h1>conciência negra CED 08</h1>
-        </div>
-        <div>
-            <a href="index.html">Sobre o CED 08</a>
-        </div>
-        <div>
-            <a href="corpofechado.html">Teatro "Corpo Fechado"</a>
-        </div>
-        <div>
-            <A href="https://www.instagram.com/ced08gama/">Instagram</A>
-         </div>
-    </nav>
-    <section>
-        <img src="maos.jpg" alt="Mãos unidas representando a união contra o racismo">
-        <p>
+
+    <header class="principal" >
+
+        <h1>Dia da Consciente Negra </h1>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="páginainicial.html">Início</a></li><br>
+                <li><a href="index.html">Sobre Nós</a></li><br>
+                <li><a href="corpofechado.html">Teatro "Corpo Fechado"</a></li><br>
+                <li><a href="conciêncianegra.html">Conciência Negra</a></li><br>
+                <li><a href="https://www.instagram.com/ced08gama/">Instagram</a></li><br>
+                <li><a href="https://linktr.ee/ced08gama?fbclid=PAZXh0bgNhZW0CMTEAAaY-ps3hxEQBxYxWM96Z-MFCefbhvxPBCILXVytCb_EE5ttX6PuAIMvVspg_aem_TlQLX6Tx_wIWXVK3rwaXHA">Informações Importantes</a></li><br>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <img  style="margin-top: 90px; border: solid 1px black;"  src=".racismo1.jpg" alt="Mãos unidas representando a união contra o racismo">
+        <br>
+        <br>
+        <p style="margin-top: 70px;">
             No CED 08 Gama, a comemoração do Dia da Consciência Negra é marcada por diversas atividades que envolvem toda a comunidade escolar. São realizadas palestras, oficinas de arte, apresentações culturais e debates que promovem a reflexão sobre a história e a cultura afro-brasileira.
         </p>
-        
-        <h3>Depoimentos</h3>
+    </section>
+    
+    <section id="testemunhos">
+        <h3 style="color: #f90;font-size: 27px;">Depoimentos</h3>
         <blockquote>
             <p>"Participar das atividades do Dia da Consciência Negra me fez entender a importância da história negra no Brasil e como ela influencia a nossa identidade." - <strong>Luiz Felipe, Aluno do 2º ano</strong></p>
         </blockquote>
-        
         <blockquote>
             <p>"Essas iniciativas ajudam a promover um ambiente de respeito e inclusão, onde todos se sentem representados." - <strong>Prof. Carlos</strong></p>
         </blockquote>
+    </section>
 
-        <h3>Galeria de Fotos</h3>
+    <section id="galeria">
+        <h3 style="color: #f90; font-size: 27px;">Galeria de Fotos</h3>
         <p>Confira alguns momentos das celebrações do Dia da Consciência Negra no CED 08:</p>
         <div class="galeria">
             <img src="foto1.jpg" alt="Atividade cultural no CED 08" />
             <img src="foto2.jpg" alt="Apresentação de dança afro" />
             <img src="foto3.jpg" alt="Palestra sobre história afro-brasileira" />
         </div>
-        
-        <h3>Recursos Adicionais</h3>
+    </section>
+
+    <section id="recursos">
+        <h3 style="color: #f90; font-size: 27px;">Recursos Adicionais</h3>
         <p>Para mais informações sobre a história afro-brasileira, confira os seguintes recursos:</p>
         <ul>
             <li><a href="https://www.todamateria.com.br/zumbi-dos-palmares/">Artigo sobre Zumbi dos Palmares</a></li>
             <li><a href="https://www.youtube.com/watch?v=IV-wrKED-Es">Documentário sobre a luta contra o racismo</a></li>
             <li><a href="https://www.todamateria.com.br/raizes-do-brasil/">Livro: "Raízes do Brasil" de Sérgio Buarque de Holanda</a></li>
         </ul>
+        <img src=".racismo.jpg" alt="multidão com placa diga não ao racismo">
     </section>
+
     <footer>
         <p>CED08 Gama - Educação para a Inclusão e Consciência</p>
-        <p>Endereço:St. Sul Q 4 - Gama, Brasília - DF, 72415-209| Telefone: (61) 93901-8321</p>
-        <p>Nos siga nas redes sociais para mais informações sobre nossos eventos e projetos!</p>
         <p>&copy; 2024 CED08 Gama. Todos os direitos reservados.</p>
+        <div class="desenvolver"><a href="desenvolvedores.html">Desenvolvedores</a></div>
     </footer>
+    <script src="JS/script3.js"></script>
+
+    <button class="seta" onclick="topFunction()" id="topButton" title="Voltar ao topo">⬆️</button>
+
+    <script>
+        window.onscroll = function() { scrollFunction() };
+    
+        function scrollFunction() {
+            const topButton = document.getElementById("topButton");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+    
+        function topFunction() {
+            document.documentElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    </script>
+    <style>
+        #topButton {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 18px;
+            padding: 10px;
+        }
+    </style>
+    
 </body>
 </html>

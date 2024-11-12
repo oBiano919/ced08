@@ -1,0 +1,178 @@
+/* Resetação e fontes */
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Itim&family=Kanit:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Itim", sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #ffffff;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Navbar aprimorada */
+header.principal {
+    background: rgba(34, 34, 34, 0.95);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    font-size: 28px;
+    font-family: "Anton SC", sans-serif;
+    color: #f90;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+header h1:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #fff;
+}
+
+#nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#nav-menu a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #f9f9f9;
+    position: relative;
+    padding: 5px 0;
+}
+
+#nav-menu a:hover {
+    color: #f90;
+    transition: color 0.3s ease;
+}
+
+#nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #f90;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+#nav-menu a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Seção de Atividades */
+#atividades {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #333, #222);
+    color: #fff;
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#atividades h3 {
+    font-size: 32px;
+    font-family: "Kanit", sans-serif;
+    margin-bottom: 20px;
+    color: #f90;
+    animation: fadeIn 1s ease;
+}
+
+#atividades p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+#atividades a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #f90, #ff4500);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#atividades a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 138, 0, 0.5);
+}
+
+/* Imagem de perfil */
+#atividades img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #f90;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#atividades img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 138, 0, 0.6);
+}
+
+/* Footer */
+footer {
+    background: #111;
+    padding: 20px;
+    color: #bbb;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    animation: slideUp 1s ease;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

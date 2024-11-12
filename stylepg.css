@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Itim&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-/* Reset */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Itim&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,7 +7,7 @@
 
 /* Corpo */
 body {
-    font-family: "Itim", cursive;
+     font-family: "Itim", cursive;
     background-color: #000;
     color: #fff;
     line-height: 1.6;
@@ -21,8 +19,8 @@ header.principal {
     background: #222;
     padding: 15px 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Define a direção da coluna */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
     position: fixed;
     width: 100%;
     top: 0;
@@ -36,24 +34,19 @@ header h1 {
     color: #f90;
     font-weight: bold;
     transition: color 0.4s ease;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Espaço entre o título e o menu */
     cursor: pointer;
     text-align: center;
 }
-
-.g:hover > :not(:hover) {
-    filter: blur(5px);
-    opacity: 0.5;
-}
-
-#nav-menu {
-    font-family: "Anton", sans-serif;
+#nav-menu{
+   
+    font-family: "Anton SC", sans-serif;
 }
 
 #nav-menu ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 15px; /* Espaçamento entre os itens de navegação */
 }
 
 #nav-menu ul li {
@@ -88,6 +81,7 @@ header h1 {
     left: 0;
 }
 
+
 /* Animação Navbar */
 @keyframes slideDown {
     from {
@@ -108,47 +102,64 @@ header h1 {
     animation: fadeIn 1s ease;
 }
 
-/* Section */
-section {
+/* Sobre Nós */
+section#sobre, section#atividades, section#galeria {
     padding: 40px 15%;
     animation: fadeIn 1s ease;
 }
 
-section h2 {
+section h1 {
     font-size: 28px;
     color: #f90;
     margin-bottom: 20px;
     position: relative;
+    animation: popIn 1.2s ease;
 }
 
-section h2::before {
+section h3::before {
     content: "";
     position: absolute;
     bottom: -5px;
     left: 50%;
-    width: 60%;
+    width: 0;
     height: 2px;
     background-color: #f90;
-    transform: translateX(-50%);
-    opacity: 0;
+    transition: width 0.5s ease;
     animation: underline 0.8s ease forwards;
+    transform: translateX(-50%);
 }
 
-section p {
+section h3, section ul {
     color: #fff;
+    margin-top: 10px;
 }
 
-/* Imagem Centralizada */
-section img {
-    display: block;
-    margin: 20px auto;
-    max-width: 80%;
-    height: auto;
-    border: 2px solid #f90;
-    border-radius: 8px;
+/* Galeria */
+.galeria {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
     animation: fadeInImage 1s ease;
 }
 
+.galeria img {
+    max-width: 30%;
+    border: 2px solid #f90;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+.galeria:hover > :not(:hover) {
+    
+   
+    filter: blur(5px);
+        opacity: 0.5;
+    }
 /* Rodapé */
 footer {
     background: #111;
@@ -157,8 +168,10 @@ footer {
     animation: slideUp 0.8s ease;
 }
 
-.rodape p {
+footer p {
     color: #bbb;
+    font-size: 14px;
+    margin: 5px 0;
 }
 
 /* Animações */
@@ -213,13 +226,101 @@ footer {
         transform: translateY(0);
         opacity: 1;
     }
-} /* Fechamento adicionado aqui */
+}
+/* Estilos para a seção de atividades */
+#atividades {
+    padding: 40px 15%;
+    background-color: #333;
+    color: #fff;
+    animation: fadeIn 1s ease;
+    border-radius: 8px;
+}
 
-/*foto do guilheme com fransisco*/
+#atividades h3 {
+    font-size: 28px;
+    color: #f90;
+    margin-bottom: 20px;
+    position: relative;
+    animation: popIn 1.2s ease;
+}
 
-/* Estilo da sobreposição */
+#atividades ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#atividades ul li {
+    margin-bottom: 15px;
+}
+
+#atividades a {
+    color: #f90;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* Efeito de sublinhado deslizante suave */
+#atividades a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #f90;
+    transition: width 0.4s ease;
+}
+
+#atividades a:hover {
+    color: #fff;
+}
+
+#atividades a:hover::after {
+    width: 100%; /* O sublinhado expande para cobrir todo o link */
+}
+
+/* Efeito de "slide" para o link */
+@keyframes slideIn {
+    from {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#atividades ul li {
+    animation: slideIn 0.6s ease forwards;
+}
+
+/* Animação de fadeIn para a seção */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 
 
+}
 .desenvolver{
     text-align: left;
     float: center;
@@ -319,176 +420,82 @@ footer p {
 .seta:active {
     transform: scale(0.95); /* Dá uma sensação de clique */
 }
-
-@media (max-width: 768px) {
-    /* Estilos para telas pequenas, como celulares */
-    body {
-      font-size: 14px;
-    }
-    .menu {
-      display: none; /* Esconde o menu em telas pequenas */
-    }
-  }
-  /* Seção Localização */
-.localizacao {
+/* Estilo para a seção */
+#sobre {
+    background: linear-gradient(135deg, #222, #333); /* Fundo com gradiente escuro */
     padding: 50px 20px;
+    border-radius: 10px;
+    color: #f1f1f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
     text-align: center;
-    background: linear-gradient(135deg, #333, #111);
-    color: #FFD700;
-    animation: fadeIn 1s ease-in-out;
-    border-bottom: 3px solid #f90;
+    position: relative;
+    overflow: hidden; /* Para manter os efeitos dentro da seção */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.localizacao h2 {
-    font-family: "Kanit", sans-serif;
-    font-size: 32px;
-    color: #f90;
-    margin-bottom: 20px;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+#sobre:hover {
+    background: linear-gradient(135deg, #2a2a2a, #444); /* Gradiente mais claro no hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Sombra mais destacada */
 }
 
-.localizacao .endereco-container h1 {
-    font-size: 24px;
-    font-family: "Itim", cursive;
-    background: #222;
-    color: #FFD700;
-    padding: 15px;
-    border-radius: 8px;
-    display: inline-block;
-    animation: popIn 0.8s ease-in-out;
+/* Estilo e animação para o título */
+.js1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    animation: fadeIn 1s ease forwards; /* Animação de entrada */
+    opacity: 0;
+    color:#f90;
 }
 
-.localizacao .endereco-container h1::before {
-    content: "📍";
-    margin-right: 8px;
-    color: #f90;
+/* Estilo para o subtítulo */
+#sobre h3 {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #d3d3d3;
+    animation: fadeIn 1.2s ease forwards;
+    opacity: 0;
 }
 
-/* Seção Contatos */
-.contatos {
-    padding: 50px 20px;
-    text-align: center;
-    background: #111;
-    color: #fff;
-}
-
-.contatos h1 {
-    font-family: "Kanit", sans-serif;
-    font-size: 32px;
-    color: #f90;
-    margin-bottom: 25px;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.contatos ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contatos li {
-    font-size: 20px;
-    margin: 10px 0;
-}
-
-.contatos a {
-    color: #FFD700;
+/* Estilo e efeito para o link */
+.ll {
+    color: #cccccc;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    background-color: #444;
+    padding: 12px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.contatos a:hover {
-    color: #f90;
-    text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
-    transform: scale(1.1);
-    transition: transform 0.3s;
-}
-
-/* Animações */
-@keyframes popIn {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
-    .localizacao, .contatos {
-        padding: 30px 10px;
-    }
-    .localizacao h2, .contatos h1 {
-        font-size: 24px;
-    }
-    .localizacao .endereco-container h1, .contatos li {
-        font-size: 18px;
-    }
-}
-/* Adicione essa seção para tornar o layout responsivo */
-@media (max-width: 768px) {
-    /* Navbar */
-    header.principal {
-        flex-direction: column;
-        padding: 10px;
-    }
-    #nav-menu ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Seções */
-    section {
-        padding: 20px 5%;
-    }
-
-    /* Ajuste dos textos */
-    header h1, section h2 {
-        font-size: 22px;
-    }
-    section p, .localizacao h2, .contatos h1 {
-        font-size: 16px;
-    }
-
-    /* Imagens */
-    section img {
-        max-width: 100%;
-    }
-
-    /* Localização e Contatos */
-    .localizacao, .contatos {
-        padding: 20px 10px;
-    }
-    .localizacao h2, .contatos h1 {
-        font-size: 24px;
-    }
-    .localizacao .endereco-container h1, .contatos li {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 18px;
-    }
-    #nav-menu a {
-        font-size: 16px;
-    }
-    section h2 {
-        font-size: 20px;
-    }
-    footer p, .localizacao .endereco-container h1, .contatos li {
-        font-size: 14px;
-    }
-}
-
-/* Ajuste geral para imagem */
-section img {
+.ll::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    height: auto;
-    max-width: 500px; /* Limita a largura máxima */
-    border-radius: 8px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.4s ease;
+    z-index: 1;
 }
+
+.ll:hover::before {
+    left: 100%;
+}
+
+.ll:hover {
+    background-color: #555; /* Fundo mais claro no hover */
+    color: #ffffff; /* Cor mais clara para o texto */
+}
+
+/* Animações keyframes */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 
